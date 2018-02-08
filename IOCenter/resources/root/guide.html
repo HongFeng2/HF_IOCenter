@@ -28,6 +28,8 @@
 	<link rel="stylesheet" href="./src/css/style.css" />
 	<link rel="stylesheet" href="./src/css/index.css" />
 
+
+	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
 	<link rel="stylesheet" href="./lib/VideoCtrl/VideoCtrl.css" />
     
 
@@ -54,7 +56,7 @@
 				<img src="img/LOGO.png" alt="" />
 			</div>
 		</div>
-		<div class="main">
+		<div class="mainBox">
 			<div class="Index-container">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
@@ -117,9 +119,20 @@
 							</li>
 						</ul>
 					</div>
+					<div class="swiper-slide">
+						<ul>
+							<li data-id="9">
+								<img src="img/index/icon9.png">
+								<div class="txt">
+									<p class="txt_cn">宣传视频</p>
+									<p class="txt_en">promotion <br>video</p>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<!-- Add Pagination -->
-				<!--<div class="Index-pagination"></div>-->
+
+				<div class="Index-pagination"></div>
 			</div>
 		</div>
 
@@ -325,7 +338,31 @@
 		<div id="VideoCtrl8" class="VideoCtrl"></div>
 
 	</section>
-	
+
+	<section class="cc Video" id="Video9">
+
+		<div class="MainTP">
+			<div class="title">
+				<p class="title_en">Central control system</p>
+				<p class="title_cn">宣传视频</p>
+			</div>
+			<div class="return">
+				<img src="img/return.png" alt="" />
+			</div>
+			<div class="information">
+				<div class="icon">
+					<img src="img/index/icon9.png" width="132" height="128" alt="" />
+				</div>
+				<div class="text">
+					<p class="title">讲解辅助：</p>
+					<p class="container"></p>
+				</div>
+			</div>
+		</div>
+
+		<div id="VideoCtrl9" class="VideoCtrl"></div>
+
+	</section>
 
 </div>
 
@@ -387,6 +424,27 @@
 
 	</div>
 
+	<div class="Hardware">
+
+		<div class="box box1 H_Loop">
+			<div class="txt">
+				<p class="txt_en">Loop <br>Playback</p>
+				<p class="txt_cn">循环播放</p>
+			</div>
+			<div class="btn"></div>
+		</div>
+
+		<div class="box box2 H_GY">
+			<div class="txt">
+				<p class="txt_en">Inductive <br>Switch </p>
+				<p class="txt_cn">感应开关</p>
+			</div>
+			<div class="btn"></div>
+		</div>
+
+
+	</div>
+
 </script>
 
 </body>
@@ -398,6 +456,7 @@
 <script src="./lib/ws.js"></script>
 
 <script src="./lib/velocity/velocity.js"></script>
+<script src="./lib/swiper/dist/js/swiper.js"></script>
 <script src="./lib/VideoCtrl/VideoCtrl.js"></script>
 
 <script src="./lib/libs.js"></script>

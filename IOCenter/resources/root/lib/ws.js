@@ -61,7 +61,7 @@ ws_client.prototype.connect = function(fn){
         Log("WebSocket断开连接");
         if(!ws_if_redo) {
             Log("WebSocket准备尝试重连", e);
-            _this.connect(fn);
+            location.reload();
         }
     };
 
@@ -99,12 +99,14 @@ ws_client.prototype.connect = function(fn){
             _this.redo = "";
             ws_if_redo = 0;
             _this.redoTime = 0;
+            // location.reload();
         }else{
             _this.redoTime++;
             Log("WebSocket 等待连接中", _this.redoTime);
             ws_if_redo = 1;
             _this.ws.close();
             _this.connect(fn);
+
         }
     }, 2000);
 

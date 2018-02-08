@@ -166,3 +166,59 @@
     color: #fff;
     text-shadow: 3px 4px 3px rgba(0,0,0,.3);
 }
+
+.Hardware{
+    position: absolute;
+    left:0px; top: 370px;
+    width: 900px; height: 120px; overflow: hidden;
+    border-top: 1px solid #fff;
+}
+/*.Hardware.HD{*/
+/*top: 230px;*/
+/*border-top:0px solid #fff;*/
+/*}*/
+.Hardware .box1{
+    left: 0px;
+}
+.Hardware .box2{
+    left: 220px;
+}
+.Hardware .box3{
+    left: 440px;
+}
+.Hardware .box4{
+    left: 660px;
+}
+.Hardware .box{
+    position: absolute;
+    top:20px;
+}
+.Hardware .box .btn{
+    position: absolute; left: 0px;
+}
+.Hardware .btn{
+    position: absolute; left: 0; top:20px;
+    width: 75px; height: 41px;
+    background: url(img/btns.png) no-repeat 0 0;
+}
+.Hardware .btn.act{
+    background: url(img/btns.png) no-repeat -75px 0;
+}
+
+.Hardware .txt{
+    position: absolute; top:10px; padding-left: 80px;
+    width: 160px;
+}
+.Hardware .txt_cn{
+    font-family: "Microsoft YaHei";
+    font-size: 14px;
+    color: #fff;
+    text-shadow: 3px 4px 3px rgba(0,0,0,.3);
+}
+.Hardware .txt_en{
+    font-family: "Arial";
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 3px 4px 3px rgba(0,0,0,.3);
+}

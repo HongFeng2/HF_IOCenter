@@ -94,6 +94,49 @@ VideoCtrl.prototype.ini = function(pa){
         this.playTime = parseInt(json.val);
     }.bind(this));
 
+    this.Hardware_ini(pa);
+
+};
+
+//附加控制
+VideoCtrl.prototype.Hardware_ini = function(pa){
+    var _this = this;
+    if(!pa.Hand) return;
+
+    if(pa.Hand.H_Loop) {
+        _this.dom.H_Loop = $(_this.id+" .H_Loop");
+        if(pa.Hand.H_Loop_ACT) _this.dom.H_Loop.find(".btn").addClass("act");
+        _this.dom.H_Loop.tap(function(e){
+            cc.tap(e);
+            if(_this.dom.H_Loop.find(".btn").hasClass("act")){
+                _this.dom.H_Loop.find(".btn").removeClass("act");
+                ws.emit({to:_this.to , key:"H_Loop", val:"no"});
+            }else{
+                _this.dom.H_Loop.find(".btn").addClass("act");
+                ws.emit({to:_this.to , key:"H_Loop", val:"yes"});
+            }
+        })
+    }else{
+        $(_this.id+" .H_Loop").hide();
+    }
+    //感应器
+    if(pa.Hand.H_GY) {
+        _this.dom.H_GY = $(_this.id+" .H_GY");
+        if(pa.Hand.H_GY_ACT) _this.dom.H_GY.find(".btn").addClass("act");
+        _this.dom.H_GY.tap(function(e){
+            cc.tap(e);
+            if(_this.dom.H_GY.find(".btn").hasClass("act")){
+                _this.dom.H_GY.find(".btn").removeClass("act");
+                ws.emit({to:_this.to , key:"H_GY", val:"no"});
+            }else{
+                _this.dom.H_GY.find(".btn").addClass("act");
+                ws.emit({to:_this.to , key:"H_GY", val:"yes"});
+            }
+        })
+    }else{
+        $(_this.id+" .H_GY").hide();
+    }
+
 };
 
 //获取片场

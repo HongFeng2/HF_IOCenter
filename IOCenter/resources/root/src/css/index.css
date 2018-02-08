@@ -28,7 +28,7 @@
     top: 208px; left: 0px;
     width:1024px; height:560px;
 }
-#Index .mainTP .main .img{
+#Index .mainTP .mainBox .img{
     position: absolute;
     width: 132px;
     height: 128px;
@@ -41,42 +41,42 @@
     text-align: center;
     background: url(../img/add.png) no-repeat center center;
 }
-#Index .mainTP .main .img.act{
+#Index .mainTP .mainBox .img.act{
     top: 0; opacity: 1;
 }
-#Index .mainTP .main .img1,
-#Index .mainTP .main .text1{
+#Index .mainTP .mainBox .img1,
+#Index .mainTP .mainBox .text1{
     left: 62px;
 }
-#Index .mainTP .main .img2,
-#Index .mainTP .main .text2{
+#Index .mainTP .mainBox .img2,
+#Index .mainTP .mainBox .text2{
     left: 292px;
 }
-#Index .mainTP .main .img3,
-#Index .mainTP .main .text3{
+#Index .mainTP .mainBox .img3,
+#Index .mainTP .mainBox .text3{
     left: 522px;
 }
-#Index .mainTP .main .img4,
-#Index .mainTP .main .text4{
+#Index .mainTP .mainBox .img4,
+#Index .mainTP .mainBox .text4{
     left: 752px;
 }
-#Index .mainTP .main .img5,
-#Index .mainTP .main .text5{
+#Index .mainTP .mainBox .img5,
+#Index .mainTP .mainBox .text5{
     left: 62px;
 }
-#Index .mainTP .main .img6,
-#Index .mainTP .main .text6{
+#Index .mainTP .mainBox .img6,
+#Index .mainTP .mainBox .text6{
     left: 292px;
 }
-#Index .mainTP .main .img7,
-#Index .mainTP .main .text7{
+#Index .mainTP .mainBox .img7,
+#Index .mainTP .mainBox .text7{
     left: 522px;
 }
-#Index .mainTP .main .img8,
-#Index .mainTP .main .text8{
+#Index .mainTP .mainBox .img8,
+#Index .mainTP .mainBox .text8{
     left: 752px;
 }
-#Index .mainTP .main .text{
+#Index .mainTP .mainBox .text{
     position: absolute;
     top: 157px;
     width: 142px;
@@ -84,28 +84,28 @@
     padding-left: 18px;
     text-align: left;
 }
-#Index .mainTP .main .text .en{
+#Index .mainTP .mainBox .text .en{
     font-size: 18px;
     text-transform: uppercase;
     color: #fff;
     text-shadow: 3px 4px 3px rgba(0,0,0,.3);
 }
-#Index .mainTP .main .text .cn{
+#Index .mainTP .mainBox .text .cn{
     font-size: 17px;
     color: #fff;
     text-shadow: 3px 4px 3px rgba(0,0,0,.3);
 }
-#Index .mainTP .main .downimg{
+#Index .mainTP .mainBox .downimg{
     position: absolute;
     top: 250px;
 }
-#Index .mainTP .main .downtext{
+#Index .mainTP .mainBox .downtext{
     position: absolute;
     top: 405px;
 }
-#Index .main{
-    position: absolute; top:170px; left: 90px;
-    width: 900px; height: 500px; overflow: hidden;
+#Index .mainBox{
+    position: absolute; top:220px; left: 90px;
+    width: 900px; height: 780px; overflow: hidden;
 }
 
 #Index .Index-container {
@@ -169,17 +169,25 @@
     overflow: hidden;
 }
 
+/*#Index .Index-pagination{*/
+    /*background-color: #3D3D3D; display: inline-block;*/
+    /*height: 16px; line-height: 16px;*/
+    /*padding-left: 20px; padding-right: 15px;*/
+    /*border-radius: 8px;*/
+    /*position: relative; left: 50%; top: -5px;*/
+    /*-webkit-transform: translateX(-50%);*/
+/*}*/
 #Index .Index-pagination{
-    background-color: #3D3D3D; display: inline-block;
+    display: inline-block; width: 900px;
     height: 16px; line-height: 16px;
-    padding-left: 20px; padding-right: 15px;
+    padding-top:20px; margin-left: -50px;
     border-radius: 8px;
     position: relative; left: 50%; top: -5px;
-    -webkit-transform: translateX(-50%);
+    /*-webkit-transform: translateX(-50%);*/
 }
 #Index .Index-pagination .swiper-pagination-bullet{
     width: 10px; height: 10px; border-radius: 5px;
-    background-color: #000; margin-right: 5px;
+    background-color: #fff; margin-right: 15px;
 }
 #Index .Index-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
     width: 10px; height: 10px; border-radius: 5px;

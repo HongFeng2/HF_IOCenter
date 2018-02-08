@@ -41,7 +41,7 @@ iframe{display: none; opacity: 0}
 }
 .cc>.bg{ position: absolute; }
 .cc .bg.all img{ width: 700px; height: 100%}
-.cc>.main{position: absolute}
+/*.cc>.main{position: absolute}*/
 #Loader{ display: block; background-color: #000; z-index: 999}
 #Loader img{
     position: absolute; left: 50%; margin-left: -44px; top:50%; margin-top: -44px;

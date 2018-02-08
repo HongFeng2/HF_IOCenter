@@ -11,6 +11,7 @@ Room.Loader.ppt = function(){
 
 Room.Index = {};
 Room.Index.dom = function(){
+
     Dom.Index = $("#Index .swiper-slide li");
     Dom.Index.eq(0).click(function(e){
         Room.Index.ppt(1);
@@ -35,6 +36,9 @@ Room.Index.dom = function(){
     });
     Dom.Index.eq(7).click(function(e){
         Room.Index.ppt(8);
+    });
+    Dom.Index.eq(8).click(function(e){
+        Room.Index.ppt(9);
     });
 
 };
