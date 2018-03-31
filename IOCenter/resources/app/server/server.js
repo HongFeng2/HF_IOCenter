@@ -7,7 +7,7 @@ var express = require('express'),
     fs      = require('fs'),
     $       = require('jquery');
 
-var ws      = require('./ws_server.js');
+// var ws      = require('./ws_server.js');
 
 
 ////////////// 服务器模块 /////////////

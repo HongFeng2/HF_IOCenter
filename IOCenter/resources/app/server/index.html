@@ -16,4 +16,12 @@
     </div>
 </body>
 <script src="server.js"></script>
+<script src="ws_server.js"></script>
+<script src="ws_io.js"></script>
+<script>
+    IOW.run.LightOpen = function(json){
+        let val = json.val;
+        io.emit(val);
+    }
+</script>
 </html>

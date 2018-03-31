@@ -10,9 +10,17 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, *sys.argv)
 
-def com_r(n):
+def getTxt(txt):
     try:
-        print("## com写入 " + n + " ##")
+        f = open(txt)
+        w = f.read()
+        f.close()
+    except Exception as err:
+        print("## "+txt+"读取失败 ##")
+    return w
+
+def com_r(ser, n):
+    try:
         r = ser.read(n)
     except Exception as err:
         print("## com读取失败 ##")
@@ -20,7 +28,7 @@ def com_r(n):
         restart_program()
     return r
 
-def com_w(w):
+def com_w(ser, w):
     try:
         w = "\\x" + w
         w = eval('b"' + w + '"')
@@ -40,7 +48,11 @@ def emit(val):
 
 def on_message(ws, msg):
     print("## ws接收数据 " + msg + " ##")
-    com_w(msg);
+    json = msg.split("_")
+    if json[0] == "20":
+        com_w(ser1, json[1])
+    if json[0] == "21":
+        com_w(ser2, json[1])
 
 
 def on_error(ws, error):
@@ -57,18 +69,19 @@ def on_open(ws):
     def com():
         try:
             while True:
-                text = ser.read(2)
-                if text:
-                    if text == bytes(b'\x01'):
-                        print("## 接受到com口信息 ##")
-                        print(text)
-                    elif text == bytes(b'\x02'):
-                        print("## 接受到com口信息 ##")
-                        print(text)
-                        emit("1")
-                    else:
-                        print("## 接受到com口信息，但未注册响应动作 ##")
-                        print(text)
+                text1 = com_r(ser1, 2)
+                if text1:
+                    t1 = str(text1)
+                    t1 = t1.replace("'", '')
+                    t1 = t1.replace("\\", '')
+                    emit("io_"+t1)
+
+                text2 = com_r(ser2, 2)
+                if text2:
+                    t2 = str(text2)
+                    t2 = t2.replace("'", '')
+                    t2 = t2.replace("\\", '')
+                    emit("io_" + t2)
 
                 time.sleep(0.001)
         except Exception as err:
@@ -78,16 +91,25 @@ def on_open(ws):
 
 
 if __name__ == "__main__":
-    port = "COM17"
+    port1 = getTxt('com_1.txt')
+    port2 = getTxt('com_2.txt')
     try:
-        ser = serial.Serial(port=port, baudrate=9600, timeout=2)
-        print("## " + port + "连接成功 ##")
+        ser1 = serial.Serial(port=port1, baudrate=9600, timeout=2)
+        print("## " + port1 + "连接成功 ##")
     except Exception as err:
-        print("## "+port+"连接失败 ##")
+        print("## "+port1+"连接失败 ##")
         time.sleep(3)
         restart_program()
 
-    host = "ws://localhost:3002/"
+    try:
+        ser2 = serial.Serial(port=port2, baudrate=9600, timeout=2)
+        print("## " + port2 + "连接成功 ##")
+    except Exception as err:
+        print("## "+port2+"连接失败 ##")
+        time.sleep(3)
+        restart_program()
+
+    host = getTxt('ws.txt')
     ws = websocket.WebSocketApp(host,
                                 on_message=on_message,
                                 on_error=on_error,

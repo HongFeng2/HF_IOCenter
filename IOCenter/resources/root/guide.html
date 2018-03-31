@@ -27,6 +27,8 @@
 
 	<link rel="stylesheet" href="./src/css/style.css" />
 	<link rel="stylesheet" href="./src/css/index.css" />
+	<link rel="stylesheet" href="./src/css/computer.css" />
+	<link rel="stylesheet" href="./src/css/light.css" />
 
 
 	<link rel="stylesheet" href="lib/swiper/dist/css/swiper.css">
@@ -38,6 +40,8 @@
 <div id="_unable"></div>
 <div id="app">
 
+
+
 	<section class="cc" id="Loader">
 		<img src="img/loader.svg" width="54">
 	</section>
@@ -46,11 +50,104 @@
         已关闭，请重新打开
     </section>
 
-	<section class="cc" id="Index">
+	<section class="cc" id="Computer">
+		<div class="_Nav">
+			<div class="nav nav1"></div>
+			<div class="nav nav2 act"></div>
+			<div class="nav nav3"></div>
+		</div>
 		<div class="mainTP">
 			<div class="title_index po">
 				<p class="en">Central control system</p>
-				<p class="cn">讲解员辅助系统</p>
+				<p class="cn">宏丰中央控制系统</p>
+			</div>
+			<div class="logo po">
+				<img src="img/LOGO.png" alt="" />
+			</div>
+		</div>
+
+		<div class="MapBox">
+			<img class="map" src="img/computer/map.png" alt="">
+
+			<div class="btnA btn_open act"><span>设备全开</span></div>
+			<div class="btnA btn_cls"><span>设备全关</span></div>
+		</div>
+
+	</section>
+
+	<section class="cc" id="Light">
+		<div class="_Nav">
+			<div class="nav nav1"></div>
+			<div class="nav nav2"></div>
+			<div class="nav nav3 act"></div>
+		</div>
+		<div class="mainTP">
+			<div class="title_index po">
+				<p class="en">Central control system</p>
+				<p class="cn">宏丰中央控制系统</p>
+			</div>
+			<div class="logo po">
+				<img src="img/LOGO.png" alt="" />
+			</div>
+		</div>
+        <div class="MapBox">
+            <img class="map" src="img/light/map.png" alt="">
+            <div class="btn btn_a"><span>A区</span></div>
+            <div class="btn btn_b"><span>B区</span></div>
+            <div class="btn btn_c"><span>C区</span></div>
+            <div class="btn btn_d"><span>D区</span></div>
+
+            <div class="btnA btn_open act"><span>灯光全开</span></div>
+            <div class="btnA btn_cls"><span>灯光全关</span></div>
+
+        </div>
+
+		<div class="SubA"></div>
+		<div class="SubB"></div>
+		<div class="SubC"></div>
+		<div class="SubD"></div>
+
+		<div class="MapBoxSub MapBoxSubA">
+			<div class="tit">A区</div>
+			<div class="btnA _sub_btn sub_1 sub_a1" data-key="a1"><span>发光字</span></div>
+			<div class="btnA _sub_btn sub_2 sub_a2" data-key="a2"><span>软膜</span></div>
+			<div class="btnA _sub_btn sub_3 sub_a3" data-key="a3"><span>假山</span></div>
+			<div class="btnA _sub_btn sub_4 sub_a4" data-key="a4"><span>万箭齐发</span></div>
+			<div class="btnA _sub_btn sub_5 sub_a5" data-key="a5"><span>轨道灯</span></div>
+		</div>
+		<div class="MapBoxSub MapBoxSubB">
+			<div class="tit">B区</div>
+			<div class="btnA _sub_btn sub_1 sub_b1" data-key="b1"><span>大门软膜</span></div>
+			<div class="btnA _sub_btn sub_2 sub_b2" data-key="b2"><span>楼梯筒灯</span></div>
+			<div class="btnA _sub_btn sub_3 sub_b3" data-key="b3"><span>照明灯带</span></div>
+		</div>
+		<div class="MapBoxSub MapBoxSubC">
+			<div class="tit">C区</div>
+			<div class="btnA _sub_btn sub_1 sub_c1" data-key="c1"><span>立柱</span></div>
+			<div class="btnA _sub_btn sub_2 sub_c2" data-key="c2"><span>软膜</span></div>
+		</div>
+		<div class="MapBoxSub MapBoxSubD">
+			<div class="tit">D区</div>
+			<div class="btnA _sub_btn sub_1 sub_d1" data-key="d1"><span>发光字</span></div>
+			<div class="btnA _sub_btn sub_2 sub_d2" data-key="d2"><span>软膜</span></div>
+			<div class="btnA _sub_btn sub_3 sub_d3" data-key="d3"><span>车型照明</span></div>
+			<div class="btnA _sub_btn sub_4 sub_d4" data-key="d4"><span>其他照明</span></div>
+			<div class="btnA _sub_btn sub_5 sub_d5" data-key="d5"><span>轨道灯</span></div>
+		</div>
+
+
+	</section>
+
+	<section class="cc" id="Index">
+		<div class="_Nav">
+			<div class="nav nav1 act"></div>
+			<div class="nav nav2"></div>
+			<div class="nav nav3"></div>
+		</div>
+		<div class="mainTP">
+			<div class="title_index po">
+				<p class="en">Central control system</p>
+				<p class="cn">宏丰中央控制系统</p>
 			</div>
 			<div class="logo po">
 				<img src="img/LOGO.png" alt="" />
@@ -137,7 +234,6 @@
 		</div>
 
 	</section>
-
 
 	<section class="cc Video" id="Video1">
 
@@ -466,7 +562,8 @@
 <script src="./src/js/init.js"></script>
 
 <script src="./src/js/index.js"></script>
-
+<script src="./src/js/computer.js"></script>
+<script src="./src/js/light.js"></script>
 
 <script>
     $("body").on('touchmove',function(event){ event.preventDefault(); },false);

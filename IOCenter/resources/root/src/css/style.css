@@ -129,3 +129,40 @@ iframe{display: none; opacity: 0}
     line-height: 25px;
     margin-top: 10px;
 }
+
+._Nav{
+    position: absolute; left:727px ; top:41px ;
+    width: 257px; height: 93px;
+    z-index: 99;
+}
+._Nav .nav{
+    position: absolute; top:0px ;
+    width: 65px; height: 93px;
+}
+._Nav .nav1{
+    left: 0px; background: url("../../img/nav1.png") no-repeat;
+}
+._Nav .nav1.act{
+    background: url("../../img/nav1_act.png") no-repeat;
+}
+._Nav .nav2{
+    left: 96px; background: url("../../img/nav2.png") no-repeat;
+}
+._Nav .nav2.act{
+    background: url("../../img/nav2_act.png") no-repeat;
+}
+._Nav .nav3{
+    left: 192px; background: url("../../img/nav3.png") no-repeat;
+}
+._Nav .nav3.act{
+    background: url("../../img/nav3_act.png") no-repeat;
+}
+
+._Btn_all{
+    position: absolute; left: 830px; top: 684px;
+    width: 154px; height: 62px;
+    background: url("../../img/btn_cls.png") no-repeat;
+}
+._Btn_all.act{
+    background: url("../../img/btn_open.png") no-repeat;
+}

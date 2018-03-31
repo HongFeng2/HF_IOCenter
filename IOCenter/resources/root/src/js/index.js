@@ -41,12 +41,33 @@ Room.Index.dom = function(){
         Room.Index.ppt(9);
     });
 
+    $("._Nav .nav1").tap(function(e){
+        cc.tap(e);
+        Room.Index.page1_ppt();
+    });
+    $("._Nav .nav2").tap(function(e){
+        cc.tap(e);
+        Room.Index.page2_ppt();
+    });
+    $("._Nav .nav3").tap(function(e){
+        cc.tap(e);
+        Room.Index.page3_ppt();
+    })
+
 };
 Room.Index.come_before = function(next){
-    cc.m["Index"].show().velocity({ translateX: -1024}, { duration: 0});
+    cc.m["Index"].show().velocity({ translateX: 1024}, { duration: 0});
     next();
 };
 Room.Index.come_after = function(){
+    cc.m["Index"].velocity({ translateX: 0}, { duration: 0});
+};
+Room.IndexBack = {};
+Room.IndexBack.come_before = function(next){
+    cc.m["Index"].show().velocity({ translateX: -1024}, { duration: 0});
+    next();
+};
+Room.IndexBack.come_after = function(){
     cc.m["Index"].velocity({ translateX: 0}, { duration: 0});
 };
 Room.Index.ppt = function(i){
@@ -55,6 +76,36 @@ Room.Index.ppt = function(i){
     cc.ppt(["Index", Video, "", "Video"] , function(after , callback){
         cc.m["Index"].velocity({ translateX: -1024}, { delay:10, duration: 400, display: "none" });
         cc.m[Video].velocity({ translateX: 0}, { duration: 400, complete:function(){
+                Dom._unable.hide();
+            }});
+    })
+};
+Room.Index.page1_ppt = function(){
+    if(cc.id=="Index") return;
+    Dom._unable.show();
+    cc.ppt([cc.id, "Index"] , function(after , callback){
+        cc.m[cc.old].velocity({ translateX: -1024}, { delay:10, duration: 400, display: "none" });
+        cc.m["Index"].velocity({ translateX: 0}, { duration: 400, complete:function(){
+                Dom._unable.hide();
+            }});
+    })
+};
+Room.Index.page2_ppt = function(){
+    if(cc.id=="Computer") return;
+    Dom._unable.show();
+    cc.ppt([cc.id, "Computer"] , function(after , callback){
+        cc.m[cc.old].velocity({ translateX: -1024}, { delay:10, duration: 400, display: "none" });
+        cc.m["Computer"].velocity({ translateX: 0}, { duration: 400, complete:function(){
+                Dom._unable.hide();
+            }});
+    })
+};
+Room.Index.page3_ppt = function(){
+    if(cc.id=="Light") return;
+    Dom._unable.show();
+    cc.ppt([cc.id, "Light"] , function(after , callback){
+        cc.m[cc.old].velocity({ translateX: -1024}, { delay:10, duration: 400, display: "none" });
+        cc.m["Light"].velocity({ translateX: 0}, { duration: 400, complete:function(){
                 Dom._unable.hide();
             }});
     })
@@ -79,7 +130,7 @@ Room.Video.come_before = function(next){
 };
 Room.Video.ppt = function(){
     Dom._unable.show();
-    cc.ppt([cc.id, "Index", "Video"] , function(after , callback){
+    cc.ppt([cc.id, "Index", "Video", "IndexBack"] , function(after , callback){
         cc.m[cc.old].velocity({ translateX: 1024}, { delay:10, duration: 400, display: "none" });
         cc.m["Index"].velocity({ translateX: 0}, { duration: 400, complete:function(){
                 Dom._unable.hide();
